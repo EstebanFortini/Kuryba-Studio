@@ -11,9 +11,10 @@ const steps = [
     desc: "No empezamos escribiendo código, sino entendiendo tu negocio. Analizamos tu competencia, definimos tus KPIs y trazamos un roadmap claro que garantice el retorno de inversión.",
     icon: <Search size={32} />,
     color: "text-brand-yellow",
-    bgGradient: "from-brand-yellow/20 to-transparent",
+    // Much subtler gradients (5% - 10%) to avoid harsh banding
+    bgGradient: "from-brand-yellow/10 to-transparent", 
     borderColor: "border-brand-yellow/50",
-    shadow: "shadow-[0_0_40px_-10px_rgba(253,185,19,0.3)]"
+    shadow: "shadow-[0_0_60px_-20px_rgba(253,185,19,0.2)]" // Softer, wider shadow
   },
   {
     id: "02",
@@ -22,9 +23,9 @@ const steps = [
     desc: "Traducimos la estrategia en una experiencia visual tangible. Creamos wireframes y diseños de alta fidelidad centrados en la conversión, asegurando que cada click sea intuitivo.",
     icon: <PenTool size={32} />,
     color: "text-brand-green",
-    bgGradient: "from-brand-green/20 to-transparent",
+    bgGradient: "from-brand-green/10 to-transparent",
     borderColor: "border-brand-green/50",
-    shadow: "shadow-[0_0_40px_-10px_rgba(0,122,51,0.3)]"
+    shadow: "shadow-[0_0_60px_-20px_rgba(0,122,51,0.2)]"
   },
   {
     id: "03",
@@ -33,9 +34,9 @@ const steps = [
     desc: "Construimos el activo digital con tecnología robusta. Código limpio, optimizado para SEO y alto rendimiento (Core Web Vitals), asegurando velocidad y escalabilidad futura.",
     icon: <Code2 size={32} />,
     color: "text-brand-red",
-    bgGradient: "from-brand-red/20 to-transparent",
+    bgGradient: "from-brand-red/10 to-transparent",
     borderColor: "border-brand-red/50",
-    shadow: "shadow-[0_0_40px_-10px_rgba(193,39,45,0.3)]"
+    shadow: "shadow-[0_0_60px_-20px_rgba(193,39,45,0.2)]"
   },
   {
     id: "04",
@@ -44,9 +45,9 @@ const steps = [
     desc: "El despliegue es solo el comienzo. Configuramos analíticas avanzadas, optimizamos la indexación y te acompañamos en la fase de crecimiento para maximizar resultados.",
     icon: <Rocket size={32} />,
     color: "text-brand-yellow",
-    bgGradient: "from-brand-yellow/20 to-transparent",
+    bgGradient: "from-brand-yellow/10 to-transparent",
     borderColor: "border-brand-yellow/50",
-    shadow: "shadow-[0_0_40px_-10px_rgba(253,185,19,0.3)]"
+    shadow: "shadow-[0_0_60px_-20px_rgba(253,185,19,0.2)]"
   }
 ];
 
@@ -114,15 +115,15 @@ const Process: React.FC = () => {
           {/* Left Column: Sticky Control Panel (Desktop) */}
           <div className="hidden lg:flex flex-col justify-center h-[calc(100vh-12rem)] sticky top-32 self-start">
             <div className="relative w-full max-w-md">
-               {/* Animated Background Blob based on active step */}
+               {/* Animated Background Blob - significantly softened */}
                <AnimatePresence mode="wait">
                 <motion.div 
                   key={activeStep}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  animate={{ opacity: 0.4, scale: 1 }} // Reduced opacity to 0.4
                   exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.5 }}
-                  className={`absolute -top-20 -left-20 w-96 h-96 rounded-full blur-[100px] -z-10 bg-gradient-to-br ${steps[activeStep].bgGradient}`}
+                  transition={{ duration: 0.8 }} // Slower transition
+                  className={`absolute -top-20 -left-20 w-96 h-96 rounded-full blur-[120px] -z-10 bg-gradient-to-br ${steps[activeStep].bgGradient}`}
                 />
                </AnimatePresence>
 
@@ -214,7 +215,7 @@ const Process: React.FC = () => {
                     relative w-full p-8 md:p-12 rounded-3xl border transition-all duration-500 
                     bg-white/5 backdrop-blur-md shadow-lg
                     ${activeStep === index 
-                      ? 'border-white/20 shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)]' 
+                      ? 'border-white/20 shadow-[0_0_50px_-20px_rgba(255,255,255,0.05)]' 
                       : 'border-white/5 hover:border-white/10'
                     }
                   `}>
@@ -236,8 +237,8 @@ const Process: React.FC = () => {
                       {step.desc}
                     </p>
 
-                    {/* Subtle Gradient Line at bottom */}
-                    <div className={`absolute bottom-0 left-0 w-full h-px bg-gradient-to-r ${step.bgGradient} opacity-50`}></div>
+                    {/* Subtle Gradient Line at bottom - Opacity reduced */}
+                    <div className={`absolute bottom-0 left-0 w-full h-px bg-gradient-to-r ${step.bgGradient} opacity-30`}></div>
                   </div>
                </motion.div>
              ))}

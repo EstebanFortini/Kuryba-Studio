@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { Instagram, Linkedin, ArrowUpRight, Circle } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-t from-brand-yellow/15 via-black/90 to-black backdrop-blur-xl border-t border-brand-yellow/10 pt-20 pb-10 text-sm relative z-10 shadow-[0_-10px_50px_-20px_rgba(253,185,19,0.2)]">
+    // Cleaned up classes: Removed gradient and shadow. Solid black with top border.
+    <footer className="bg-black border-t border-white/10 pt-20 pb-10 text-sm relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Main Grid */}
@@ -62,7 +64,7 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} Kūryba Studio. Todos los derechos reservados.
           </div>
           
-          {/* System Status - The added Polish detail */}
+          {/* System Status */}
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
              <span className="relative flex h-2 w-2">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
