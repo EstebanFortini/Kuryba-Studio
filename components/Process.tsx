@@ -11,10 +11,10 @@ const steps = [
     desc: "No empezamos escribiendo código, sino entendiendo tu negocio. Analizamos tu competencia, definimos tus KPIs y trazamos un roadmap claro que garantice el retorno de inversión.",
     icon: <Search size={32} />,
     color: "text-brand-yellow",
-    // Much subtler gradients (5% - 10%) to avoid harsh banding
-    bgGradient: "from-brand-yellow/10 to-transparent", 
+    // Ultra subtle gradient (5%) to avoid banding
+    bgGradient: "from-brand-yellow/5 to-transparent", 
     borderColor: "border-brand-yellow/50",
-    shadow: "shadow-[0_0_60px_-20px_rgba(253,185,19,0.2)]" // Softer, wider shadow
+    shadow: "shadow-[0_0_80px_-30px_rgba(253,185,19,0.15)]" // Wider, softer shadow
   },
   {
     id: "02",
@@ -23,9 +23,9 @@ const steps = [
     desc: "Traducimos la estrategia en una experiencia visual tangible. Creamos wireframes y diseños de alta fidelidad centrados en la conversión, asegurando que cada click sea intuitivo.",
     icon: <PenTool size={32} />,
     color: "text-brand-green",
-    bgGradient: "from-brand-green/10 to-transparent",
+    bgGradient: "from-brand-green/5 to-transparent",
     borderColor: "border-brand-green/50",
-    shadow: "shadow-[0_0_60px_-20px_rgba(0,122,51,0.2)]"
+    shadow: "shadow-[0_0_80px_-30px_rgba(0,122,51,0.15)]"
   },
   {
     id: "03",
@@ -34,9 +34,9 @@ const steps = [
     desc: "Construimos el activo digital con tecnología robusta. Código limpio, optimizado para SEO y alto rendimiento (Core Web Vitals), asegurando velocidad y escalabilidad futura.",
     icon: <Code2 size={32} />,
     color: "text-brand-red",
-    bgGradient: "from-brand-red/10 to-transparent",
+    bgGradient: "from-brand-red/5 to-transparent",
     borderColor: "border-brand-red/50",
-    shadow: "shadow-[0_0_60px_-20px_rgba(193,39,45,0.2)]"
+    shadow: "shadow-[0_0_80px_-30px_rgba(193,39,45,0.15)]"
   },
   {
     id: "04",
@@ -45,9 +45,9 @@ const steps = [
     desc: "El despliegue es solo el comienzo. Configuramos analíticas avanzadas, optimizamos la indexación y te acompañamos en la fase de crecimiento para maximizar resultados.",
     icon: <Rocket size={32} />,
     color: "text-brand-yellow",
-    bgGradient: "from-brand-yellow/10 to-transparent",
+    bgGradient: "from-brand-yellow/5 to-transparent",
     borderColor: "border-brand-yellow/50",
-    shadow: "shadow-[0_0_60px_-20px_rgba(253,185,19,0.2)]"
+    shadow: "shadow-[0_0_80px_-30px_rgba(253,185,19,0.15)]"
   }
 ];
 
@@ -115,15 +115,15 @@ const Process: React.FC = () => {
           {/* Left Column: Sticky Control Panel (Desktop) */}
           <div className="hidden lg:flex flex-col justify-center h-[calc(100vh-12rem)] sticky top-32 self-start">
             <div className="relative w-full max-w-md">
-               {/* Animated Background Blob - significantly softened */}
+               {/* Animated Background Blob - significantly softened for better monitor rendering */}
                <AnimatePresence mode="wait">
                 <motion.div 
                   key={activeStep}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 0.4, scale: 1 }} // Reduced opacity to 0.4
+                  animate={{ opacity: 0.15, scale: 1 }} // Reduced opacity to 15%
                   exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.8 }} // Slower transition
-                  className={`absolute -top-20 -left-20 w-96 h-96 rounded-full blur-[120px] -z-10 bg-gradient-to-br ${steps[activeStep].bgGradient}`}
+                  transition={{ duration: 1.2 }} // Slower, smoother transition
+                  className={`absolute -top-20 -left-20 w-96 h-96 rounded-full blur-[160px] -z-10 bg-gradient-to-br ${steps[activeStep].bgGradient}`}
                 />
                </AnimatePresence>
 
