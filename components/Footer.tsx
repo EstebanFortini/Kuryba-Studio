@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
 
           {/* Socials Column */}
           <div>
-            <h4 className="text-white font-bold uppercase tracking-widest mb-6 text-xs">Conectar</h4>
+            <h4 className="text-white font-bold uppercase tracking-widest mb-6 text-xs">Redes</h4>
             <div className="flex flex-col gap-4">
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg border border-white/10 group-hover:border-brand-yellow/50 group-hover:text-brand-yellow transition-colors">
