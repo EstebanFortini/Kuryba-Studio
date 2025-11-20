@@ -171,7 +171,7 @@ const Navbar: React.FC = () => {
                 active:translate-y-0
               "
             >
-              <span className="relative z-10">Empezar</span>
+              <span className="relative z-10">Hablemos</span>
             </a>
           </div>
 
@@ -311,7 +311,7 @@ const Navbar: React.FC = () => {
                px-3 py-1.5 rounded-md border border-white/10 whitespace-nowrap
                opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none
              ">
-               Contacto
+               Hablemos
              </span>
           </a>
         </div>
